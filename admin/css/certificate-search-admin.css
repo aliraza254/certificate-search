@@ -1,0 +1,12 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.unsubscribe_data{
+    margin: 10px 0;
+}
+.unsubscribe_data input{
+    width: 100%;
+    margin-top: 10px;
+}

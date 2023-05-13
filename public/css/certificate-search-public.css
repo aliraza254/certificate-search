@@ -1,0 +1,142 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.certificate_search_container{
+    width: 100%;
+}
+.certificate_search_row{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    height: 60px;
+}
+.certificate_search_content_text{
+    width: 200px;
+    text-align: right;
+    margin: 0px 20px;
+}
+.certificate_search_row input{
+    background-color: rgb(255, 255, 255);
+    width: 320px;
+    font-size: 18px;
+    font-family: 微软雅黑, MicrosoftYahei, 黑体, 宋体, "Arial Narrow", sans-serif;
+    font-weight: bold;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(195, 195, 195);
+    border-image: initial;
+    padding: 5px;
+}
+.certificate_search_row_btn div{
+    display: inline-block;
+}
+.certificate_search_row_btn_search{
+    width: 39%;
+    margin-top: 10px;
+    text-align: right;
+}
+.certificate_search_row_btn button{
+    line-height: 36px;
+    text-align: center;
+    background-color: rgb(28, 97, 168);
+    width: 130px;
+    height: 36px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-width: medium;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 0px;
+    margin: 0px 0px 10px;
+}
+.certificate_search_row_btn_search{
+    margin-right: 20px;
+}
+
+/*Table CSS*/
+
+.customers {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.customers td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+.customers tr:hover {background-color: #ddd;}
+
+/*Loader */
+
+.loader {
+    border: 7px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 7px solid black;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading_screen_container {
+    z-index: 99999;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    display: none;
+}
+.loading_screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.more_subscription{
+    cursor: pointer;
+    line-height: 36px;
+    text-align: center;
+    background-color: rgb(28, 97, 168);
+    width: 100%;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+
+}
+.certificate_content{
+    display: flex;
+    align-items: center;
+}
+
+.certificate_content img{
+    margin-left: 20px;
+}
+
+.certificate_field_img, .serial_field_img{
+    display: none;
+    width: 300px;
+}
