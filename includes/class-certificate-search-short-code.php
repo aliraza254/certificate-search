@@ -277,12 +277,33 @@ EOT;
         return $differenceInYears <= 1;
     }
 
+    public function redirect_to_checkout_after_registration()
+    {
+        $info = isset($_COOKIE['more_info']) ? $_COOKIE['more_info'] : '';
+
+        if ($info == '100') {
+            $_product = get_option('product_id');
+            $quantity = 1;
+            WC()->cart->add_to_cart($_product, $quantity);
+            $checkout_url = wc_get_checkout_url();
+            wp_safe_redirect($checkout_url);
+            setcookie('more_info', '', time() + (86400 * 30), "/");
+            exit;
+        }else{
+            $myaccount_url = wc_get_account_endpoint_url('dashboard');
+            wp_safe_redirect($myaccount_url);
+            exit;
+        }
+    }
+
     public function certificate_search_subscription_result()
     {
+
         $certificate = isset($_POST['certificate_no']) ? $_POST['certificate_no'] : '';
         $serial = isset($_POST['serial_no']) ? $_POST['serial_no'] : '';
 
         if (!is_user_logged_in()) {
+            setcookie('more_info', 100, time() + (86400 * 30), "/");
             ?>
             <script>
                 window.location.replace("<?php echo esc_url( get_home_url().'/my-account' ); ?>");

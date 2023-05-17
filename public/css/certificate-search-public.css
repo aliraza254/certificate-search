@@ -13,7 +13,7 @@
     height: 60px;
 }
 .certificate_search_content_text{
-    width: 200px;
+    width: 120px;
     text-align: right;
     margin: 0px 20px;
 }
@@ -33,9 +33,10 @@
     display: inline-block;
 }
 .certificate_search_row_btn_search{
-    width: 39%;
+    width: 300px;
     margin-top: 10px;
     text-align: right;
+    margin-right: 20px;
 }
 .certificate_search_row_btn button{
     line-height: 36px;
@@ -52,9 +53,6 @@
     border-image: initial;
     padding: 0px;
     margin: 0px 0px 10px;
-}
-.certificate_search_row_btn_search{
-    margin-right: 20px;
 }
 
 /*Table CSS*/
@@ -139,4 +137,48 @@
 .certificate_field_img, .serial_field_img{
     display: none;
     width: 300px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+    .certificate_field_img, .serial_field_img{
+        display: none !important;
+    }
+    .certificate_content{
+        width: 100%;
+    }
+    .certificate_content input{
+        width: 100%;
+    }
+    .certificate_search_row{
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .certificate_search_content_text{
+        width: 100%;
+        text-align: left;
+        margin: 20px 0px;
+    }
+    .certificate_search_row_btn{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 20px 10px 0 10px;
+    }
+    .certificate_search_row_btn_search{
+        width: inherit;
+        margin-top: 0;
+    }
+    .certificate_search_row_btn button{
+        width: 119px;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+    .certificate_field_img, .serial_field_img{
+        display: none !important;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .certificate_field_img, .serial_field_img{
+        width: 200px;
+    }
 }

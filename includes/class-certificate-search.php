@@ -184,7 +184,7 @@ class Certificate_Search {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
+//
 	}
 
     /**
@@ -203,6 +203,8 @@ class Certificate_Search {
 
         $this->loader->add_action( 'wp_ajax_certificate_search_subscription_result', $shortcode_admin, 'certificate_search_subscription_result' );
         $this->loader->add_action( 'wp_ajax_nopriv_certificate_search_subscription_result', $shortcode_admin, 'certificate_search_subscription_result' );
+
+        $this->loader->add_filter( 'woocommerce_registration_redirect', $shortcode_admin, 'redirect_to_checkout_after_registration' );
 
         add_shortcode( 'certificate_search', array($shortcode_admin, 'certificate_search_function') );
         add_shortcode( 'certificate_search_table', array($shortcode_admin, 'certificate_search_table_function') );
